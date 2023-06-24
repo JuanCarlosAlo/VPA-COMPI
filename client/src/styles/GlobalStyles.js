@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS, SECONDARY_COLORS } from '../constants/colors';
 
 const GlobalStyles = createGlobalStyle`
   *,
@@ -13,6 +14,10 @@ const GlobalStyles = createGlobalStyle`
   body{
     margin: 0;
     font-family: sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background: ${SECONDARY_COLORS.BACKGROUND_GRADIANT};
+    color: ${COLORS.WHITE};
   }
   a{
     text-decoration: none;
@@ -24,6 +29,7 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 0;
     padding-left: 0;
   }
+  
 `;
 
 export { GlobalStyles };
