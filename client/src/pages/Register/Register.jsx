@@ -9,7 +9,7 @@ import { Navigate } from 'react-router-dom';
 const Register = () => {
 	const { currentUser } = useContext(AuthContext);
 
-	const { data, loading, error, setFetchInfo } = useFetch({
+	const { loading, error, setFetchInfo } = useFetch({
 		url: USERS_URLS.ALL_USERS
 	});
 
