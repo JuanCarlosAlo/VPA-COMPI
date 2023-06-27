@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { MEASUREMENTS } from '../../constants/measurements';
-import { COLORS } from '../../constants/colors';
+import { COLORS, SECONDARY_COLORS } from '../../constants/colors';
 const StyledFooter = styled.footer`
 	display: flex;
 	align-items: center;
@@ -8,6 +8,8 @@ const StyledFooter = styled.footer`
 	padding-left: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
 	padding-right: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
 	height: ${MEASUREMENTS.FOOTER.HEIGHT};
+	background: ${SECONDARY_COLORS.SECONDARY_GRADIANT};
+	color: ${COLORS.MAIN};
 	/* border-top: 1px solid ${COLORS.SECONDARY}; */
 `;
 

@@ -1,10 +1,12 @@
 export const COLORS = {
 	MAIN: '#E6122B',
 	SECONDARY: '#01D3E2',
+	TERCIARY: '#CFF10A',
 	BLACK: '#000000',
-	WHITE: '#F0F0F0',
-	UNACTIVE: 'rgba(240, 240, 240, 0.7)'
+	WHITE: '#FAFAFA',
+	UNACTIVE: '#004E5C'
 };
 export const SECONDARY_COLORS = {
-	BACKGROUND_GRADIANT: `linear-gradient(180deg, rgba(30, 30, 30, 1) 0%, #000000 25%)`
+	BACKGROUND_GRADIANT: `linear-gradient(180deg, rgba(18, 192, 230, 0.70) 0%, #F0F0F0 35%);`,
+	SECONDARY_GRADIANT: `linear-gradient(180deg, rgba(18, 192, 230, 0.70) 0%, #F0F0F0 65%);`
 };

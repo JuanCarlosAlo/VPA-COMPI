@@ -9,7 +9,9 @@ const StyledPage = styled.div`
 		${MEASUREMENTS.PAGES.HEIGHT} -
 			calc(${MEASUREMENTS.HEADER.HEIGHT} + ${MEASUREMENTS.FOOTER.HEIGHT})
 	);
-	padding-top: 2rem;
+	padding-top: ${MEASUREMENTS.PADDING.SECONDARY_HEADER};
+	padding-left: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
+	padding-right: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
 `;
 
 export { StyledPage };

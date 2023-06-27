@@ -11,8 +11,8 @@ const Menu = () => {
 			{currentUser ? (
 				<nav>
 					<StyledMenu>
-						<Link>
-							<li>{currentUser.email}</li>
+						<Link to={'/profile'}>
+							<li>{currentUser.userName}</li>
 						</Link>
 					</StyledMenu>
 				</nav>

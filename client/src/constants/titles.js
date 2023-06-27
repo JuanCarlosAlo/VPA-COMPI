@@ -1,4 +1,17 @@
 export const TITLES = {
 	WELCOME: 'WELCOME',
-	MAIN: ['JOURNAL', 'TASKS', 'CHAT']
+	MAIN: [
+		{
+			TEXT: 'JOURNAL',
+			URL: '/journal'
+		},
+		{
+			TEXT: 'TASKS',
+			URL: '/tasks'
+		},
+		{
+			TEXT: 'CHAT',
+			URL: '/chat'
+		}
+	]
 };
