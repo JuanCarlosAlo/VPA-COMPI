@@ -5,7 +5,7 @@ const controller = {};
 
 controller.getAllUsers = async (req, res) => {
   const allUsers = await UserModel.find();
-  console.log(allUsers);
+
   try {
     res.status(200).send(allUsers);
   } catch (error) {
@@ -15,7 +15,7 @@ controller.getAllUsers = async (req, res) => {
 
 controller.getUserId = async (req, res) => {
   const autentifiedUser = await UserModel.findById(req.params.id);
-  console.log(req.params.id);
+
   try {
     res.status(200).send(autentifiedUser);
   } catch (error) {
@@ -24,12 +24,13 @@ controller.getUserId = async (req, res) => {
 };
 
 controller.createUser = async (req, res) => {
+  console.log("test");
   try {
     const { _id, email, userName, type, journalsEntries, tasks, chats } =
       req.body;
     const newDate = Date.now();
-
-    const newUser = new UserModel({
+    console.log(req.body);
+    const newUser = await new UserModel({
       _id,
       email,
       journalsEntries,
@@ -45,6 +46,7 @@ controller.createUser = async (req, res) => {
       return res.status(409).send({ error: "User already exists" });
     }
     await newUser.save();
+    console.log(newUser);
     return res.status(200).send({ message: "User created successfully" });
   } catch (error) {
     return res.status(500).send({ error: "Error creating user" });

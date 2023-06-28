@@ -6,12 +6,12 @@ const JournalEntryScheme = mongoose.Schema(
     userId: String,
     journalsEntries: [
       {
-        journalEntrie_id: String,
-        journalEntrieCreation: Number,
-        journalEntrieEdited: Number,
-        JournalEntrieTitle: String,
-        JournalEntrieText: String,
-        JournalEntrieImgs: Array,
+        _id: String,
+        journalEntryCreation: Number,
+        journalEntryEdited: Number,
+        journalEntryTitle: String,
+        journalEntryText: String,
+        journalEntryImgs: Array,
       },
     ],
   },

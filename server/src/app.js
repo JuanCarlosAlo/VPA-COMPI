@@ -17,6 +17,7 @@ const io = new Server(httpServer, {
 
 // Rutas
 const usersRoutes = require("./routes/users.routes");
+const journalRoutes = require("./routes/journal.routes");
 
 // Middlewares
 app.use(cors());
@@ -51,6 +52,7 @@ io.on("connection", (socket) => {
 
 // Rutas
 app.use("/users", usersRoutes);
+app.use("/journal", journalRoutes);
 
 // Inicia el servidor
 const startServer = async () => {

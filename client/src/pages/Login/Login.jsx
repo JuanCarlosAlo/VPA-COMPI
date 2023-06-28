@@ -71,7 +71,7 @@ const Login = () => {
 	);
 };
 
-const onSubmit = async (formData, e, navigate, setFirebaseErrors) => {
+const onSubmit = async (formData, e, navigate) => {
 	e.preventDefault();
 	const { email, password } = formData;
 
@@ -79,7 +79,7 @@ const onSubmit = async (formData, e, navigate, setFirebaseErrors) => {
 		await signInWithEmailAndPassword(auth, email, password);
 		navigate('/');
 	} catch (error) {
-		setFirebaseErrors(error.error);
+		console.log(error);
 	}
 };
 
