@@ -67,4 +67,47 @@ controller.createEntry = async (req, res) => {
   }
 };
 
+controller.editEntry = async (req, res) => {
+  try {
+    const {
+      _id,
+      journalEntryTitle,
+      journalEntryCreation,
+      journalEntryText,
+      journalEntryEdited,
+      journalEntryImgs,
+    } = req.body;
+
+    const result = await JournalsModel.findOneAndUpdate(
+      {
+        userId: req.params.id,
+      },
+      {
+        $set: {
+          'journalsEntries.$[entry].journalEntryTitle': journalEntryTitle,
+          'journalsEntries.$[entry].journalEntryCreation': journalEntryCreation,
+          'journalsEntries.$[entry].journalEntryText': journalEntryText,
+          'journalsEntries.$[entry].journalEntryEdited': journalEntryEdited,
+          'journalsEntries.$[entry].journalEntryImgs': journalEntryImgs,
+        },
+      },
+      {
+        arrayFilters: [{ 'entry._id': _id }],
+        new: true, // Devuelve el documento actualizado
+      }
+    );
+
+    if (!result) {
+      return res.status(404).send({ error: "Entry not found" });
+    }
+    await result.save()
+    console.log(result); // Imprime el documento actualizado
+
+    return res.status(200).send({ message: "Entry edited successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ error: "Error editing entry" });
+  }
+};
+
 module.exports = controller;

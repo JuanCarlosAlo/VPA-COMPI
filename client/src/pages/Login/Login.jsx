@@ -13,7 +13,9 @@ import Text from '../../components/text/Text';
 import { COLORS } from '../../constants/colors';
 import SecondaryButton from '../../components/secondary-button/SecondaryButton';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
-import InputContainer from '../../components/formContainer/InputContainer';
+
+import { MEASUREMENTS } from '../../constants/measurements';
+import InputContainer from '../../components/InputContainer/InputContainer';
 
 const Login = () => {
 	const { currentUser } = useContext(AuthContext);
@@ -58,13 +60,14 @@ const Login = () => {
 				<Text
 					color={COLORS.SECONDARY}
 					text={'Dont have an account?'}
-					align={'center'}
+					align={MEASUREMENTS.ALIGN.CENTER}
+					fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 				/>
 				<SecondaryButton
 					url={'/register'}
 					text={'Register here'}
 					color={COLORS.SECONDARY}
-					align={'center'}
+					align={MEASUREMENTS.ALIGN.CENTER}
 				/>
 			</form>
 		</PageComponent>

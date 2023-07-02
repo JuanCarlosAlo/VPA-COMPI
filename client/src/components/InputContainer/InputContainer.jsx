@@ -6,7 +6,8 @@ const InputContainer = ({
 	type,
 	register,
 	formValidation,
-	errors
+	errors,
+	defaultValue
 }) => {
 	return (
 		<StyledInputContainer>
@@ -16,6 +17,7 @@ const InputContainer = ({
 				name={keyForm}
 				id={keyForm}
 				{...register(keyForm, formValidation)}
+				defaultValue={defaultValue}
 			/>
 			<StyledErrorText>{errors?.[keyForm]?.message}</StyledErrorText>
 		</StyledInputContainer>

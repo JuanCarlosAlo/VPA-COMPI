@@ -4,15 +4,17 @@ import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import { AuthContext } from '../../context/Auth.context';
 import { JOURNAL_URLS } from '../../constants/urls';
 import { useFetch } from '../../hooks/useFetch';
+import PageContainer from '../../components/page-container/PageContainer';
+import JournalEntryContainer from '../../components/journal-entry-container/JournalEntryContainer';
 
 const Journal = () => {
 	const { currentUser } = useContext(AuthContext);
-	const { data, loading, error } = useFetch({
+	const { data, loading } = useFetch({
 		url: JOURNAL_URLS.ALL_ENTRIES + currentUser._id
 	});
+
 	if (loading) return <h2>Loading</h2>;
-	if (error) return <h2>error</h2>;
-	console.log(data);
+
 	return (
 		<PageComponent>
 			<Secondaryheader
@@ -21,16 +23,16 @@ const Journal = () => {
 				secondText={'+ New entry'}
 				secondUrl={'/new-entry'}
 			/>
-			Journal
-			<div>
-				{data.journalsEntries.length === 0 ? (
+
+			<PageContainer scroll={true}>
+				{!data || data.journalsEntries.length === 0 ? (
 					<p>There is not entries yet in your journal</p>
 				) : (
-					data.journalsEntries.map(entrie => (
-						<div key={entrie._id}>{entrie.journalEntryTitle}</div>
+					data.journalsEntries.map(entry => (
+						<JournalEntryContainer key={entry._id} entry={entry} />
 					))
 				)}
-			</div>
+			</PageContainer>
 		</PageComponent>
 	);
 };

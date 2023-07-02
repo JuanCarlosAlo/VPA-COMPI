@@ -11,7 +11,7 @@ const Footer = () => {
 			<Text
 				text={'Developed by J.C.A.M'}
 				color={`${COLORS.MAIN}`}
-				fontSize={`${MEASUREMENTS.FONTS_SIZE.SUBTITLES.MOBILE}`}
+				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 			/>
 			<Link target='_blank' to='https://github.com/JuanCarlosAlo/VPA-COMPI'>
 				<Icon img={'/images/github.svg'} />

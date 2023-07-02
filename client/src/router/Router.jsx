@@ -9,7 +9,9 @@ import Profile from '../pages/Profile/Profile';
 import Journal from '../pages/Journal/Journal';
 import Tasks from '../pages/Tasks/Tasks';
 import Chat from '../pages/Chat/Chat';
-import NewJournalEntry from '../pages/New-Journal-Emtry/NewJournalEntry';
+import NewJournalEntry from '../pages/New-Journal-Entry/NewJournalEntry';
+import JournalEntry from '../pages/Journal-Entry/JournalEntry';
+import EditJournalEntry from '../pages/Edit-Journal-Entry/EditJournalEntry';
 
 const Router = () => {
 	return (
@@ -44,10 +46,26 @@ const Router = () => {
 						}
 					/>
 					<Route
+						path='/journal-entry'
+						element={
+							<ProtectedRoute>
+								<JournalEntry />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
 						path='/new-entry'
 						element={
 							<ProtectedRoute>
 								<NewJournalEntry />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/edit-entry'
+						element={
+							<ProtectedRoute>
+								<EditJournalEntry />
 							</ProtectedRoute>
 						}
 					/>

@@ -8,5 +8,11 @@ export const USERS_URLS = {
 
 export const JOURNAL_URLS = {
 	ALL_ENTRIES: BASE + 'journal/all-entries/',
-	CREATE_ENTRY: BASE + 'journal/new-entry/'
+	CREATE_ENTRY: BASE + 'journal/new-entry/',
+	EDIT_ENTRY: BASE + 'journal/edit-entry/'
+};
+
+export const TASKS_URLS = {
+	ALL_TASKS: BASE + 'tasks/all-tasks/',
+
 };

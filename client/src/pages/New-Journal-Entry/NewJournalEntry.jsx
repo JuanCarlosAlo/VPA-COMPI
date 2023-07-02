@@ -9,6 +9,12 @@ import { FORM_VALIDATIONS } from '../../constants/formValidations';
 import { METHODS } from '../../constants/methods';
 import { HEADERS } from '../../constants/headers';
 import { JOURNAL_URLS } from '../../constants/urls';
+import Text from '../../components/text/Text';
+import { MEASUREMENTS } from '../../constants/measurements';
+import InputContainer from '../../components/InputContainer/InputContainer';
+import { StyledTexboxInput } from './styles';
+import SecondaryButton from '../../components/secondary-button/SecondaryButton';
+import { COLORS } from '../../constants/colors';
 
 const NewJournalEntry = () => {
 	const { currentUser } = useContext(AuthContext);
@@ -30,24 +36,31 @@ const NewJournalEntry = () => {
 						onSubmit(formData, e, setFetchInfo, currentUser, currentDate)
 					)}
 				>
-					<div>
-						<label htmlFor='journalEntryTitle'>Title</label>
-						<input
-							type='text'
-							name='journalEntryTitle'
-							{...register('journalEntryTitle')}
-						/>
-					</div>
-					<p>{new Date(currentDate).toLocaleDateString()}</p>
-					<div>
-						<input
-							type='textbox'
-							name='journalEntryText'
-							{...register('journalEntryText', FORM_VALIDATIONS.journalEntry)}
-						/>
-						<p>{errors?.text?.message}</p>
-					</div>
-					<button>Accept</button>
+					<Text
+						text={`Date: ${new Date(currentDate).toLocaleDateString()}`}
+						align={MEASUREMENTS.ALIGN.LEFT}
+						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+					/>
+					<InputContainer
+						errors={errors}
+						keyForm={'journalEntryTitle'}
+						label={'Title'}
+						register={register}
+						type={'text'}
+					/>
+
+					<StyledTexboxInput
+						name='journalEntryText'
+						{...register('journalEntryText', FORM_VALIDATIONS.journalEntry)}
+						placeholder='Write your entry here'
+					/>
+					<p>{errors?.text?.message}</p>
+
+					<SecondaryButton
+						align={MEASUREMENTS.ALIGN.CENTER}
+						color={COLORS.MAIN}
+						text={'Accept'}
+					/>
 				</form>
 			</PageContainer>
 		</PageComponent>

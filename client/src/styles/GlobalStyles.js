@@ -34,6 +34,44 @@ const GlobalStyles = createGlobalStyle`
     padding-left: 0;
   }
   
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #E6122B #FFFFFF;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #E6122B;
+  border: 1px solid #000000;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #01D3E2;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #01D3E2;
+}
+
 `;
 
 export { GlobalStyles };
