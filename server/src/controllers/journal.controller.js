@@ -36,7 +36,7 @@ controller.createEntry = async (req, res) => {
       journalEntryImgs,
     } = req.body;
 
-    let journalCollection = await JournalsModel.findById(userId);
+    let journalCollection = await JournalsModel.findOne({ userId: userId });
 
     if (!journalCollection) {
       // Crear nueva colección si no existe
@@ -55,7 +55,7 @@ controller.createEntry = async (req, res) => {
       journalEntryText,
       journalEntryImgs,
     };
-    console.log(journalCollection._id);
+
     await journalCollection.journalsEntries.unshift(newEntry);
     await journalCollection.save();
     await currentUser.journalEntries.unshift(journalCollection._id);
@@ -101,7 +101,7 @@ controller.editEntry = async (req, res) => {
       return res.status(404).send({ error: "Entry not found" });
     }
     await result.save()
-    console.log(result); // Imprime el documento actualizado
+
 
     return res.status(200).send({ message: "Entry edited successfully" });
   } catch (error) {

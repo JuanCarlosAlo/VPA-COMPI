@@ -1,20 +1,32 @@
-import { getCalendarDays } from '../../utils/getCalendarDays';
 import { v4 } from 'uuid';
-import { StyledCalendar } from './styles';
-const Calendar = () => {
-	const currentDate = new Date();
-	const allDays = getCalendarDays(currentDate);
-	console.log(allDays);
+import {
+	StyledCalendar,
+	StyledCalendarDay,
+	StyledCalendarNumber
+} from './styles';
+import { getDateToPrint } from '../../utils/getTimeToPrint';
+
+const Calendar = ({ tasks, allDays, setFilter, filter }) => {
 	return (
 		<StyledCalendar>
 			{allDays.map(day => (
-				<div key={v4()}>
-					<p>{day.dayNumber}</p>
+				<StyledCalendarDay
+					key={v4()}
+					onClick={() => setFilter({ ...filter, date: day.dateString })}
+				>
+					<StyledCalendarNumber task={dateComparation(day.dateString, tasks)}>
+						{day.dayNumber}
+					</StyledCalendarNumber>
 					<p>{day.monthName}</p>
-				</div>
+				</StyledCalendarDay>
 			))}
 		</StyledCalendar>
 	);
+};
+
+const dateComparation = (calendarDay, tasks) => {
+	if (!tasks) return;
+	return tasks.some(task => calendarDay === getDateToPrint(task.taskDate));
 };
 
 export default Calendar;

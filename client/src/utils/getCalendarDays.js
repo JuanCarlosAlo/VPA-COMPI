@@ -7,8 +7,10 @@ export const getCalendarDays = (currentDate) => {
         const dayNumber = date.getDate();
         const monthNumber = date.getMonth() + 1;
         const monthName = date.toLocaleString('default', { month: 'short' });
+        const year = date.getFullYear();
+        const dateString = `${monthNumber.toString().padStart(2, '0')}/${dayNumber.toString().padStart(2, '0')}/${year}`;
 
-        daysArray.push({ dayOfWeek, dayNumber, monthNumber, monthName });
+        daysArray.push({ dayOfWeek, dayNumber, monthNumber, monthName, year, dateString });
     }
-    return daysArray
-}
+    return daysArray;
+};

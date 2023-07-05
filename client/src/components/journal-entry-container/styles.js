@@ -11,7 +11,7 @@ const StyledJournalEntry = styled.div`
 	border-radius: 1rem;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	border: 2px solid ${COLORS.MAIN};
+	margin-bottom: 1rem;
 	cursor: pointer;
 	&:hover{
 		background-color: ${COLORS.MAIN};

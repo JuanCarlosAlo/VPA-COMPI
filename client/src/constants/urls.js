@@ -14,5 +14,6 @@ export const JOURNAL_URLS = {
 
 export const TASKS_URLS = {
 	ALL_TASKS: BASE + 'tasks/all-tasks/',
-
+	CREATE_TASK: BASE + 'tasks/new-task/',
+	COMPLETE_TASK: BASE + 'tasks/complete-task/'
 };

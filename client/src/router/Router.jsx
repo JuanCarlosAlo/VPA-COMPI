@@ -12,6 +12,7 @@ import Chat from '../pages/Chat/Chat';
 import NewJournalEntry from '../pages/New-Journal-Entry/NewJournalEntry';
 import JournalEntry from '../pages/Journal-Entry/JournalEntry';
 import EditJournalEntry from '../pages/Edit-Journal-Entry/EditJournalEntry';
+import NewTask from '../pages/New-Task/NewTask';
 
 const Router = () => {
 	return (
@@ -74,6 +75,14 @@ const Router = () => {
 						element={
 							<ProtectedRoute>
 								<Tasks />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/new-task'
+						element={
+							<ProtectedRoute>
+								<NewTask />
 							</ProtectedRoute>
 						}
 					/>

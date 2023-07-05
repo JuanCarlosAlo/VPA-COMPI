@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { StyledButton } from './styles';
+import { StyledButton, StyledButtonContainer } from './styles';
 
 const SecondaryButton = ({
 	text,
@@ -13,16 +13,17 @@ const SecondaryButton = ({
 	const navigate = useNavigate();
 
 	return (
-		<StyledButton
-			color={color}
-			align={align}
-			onClick={() => {
-				if (setState) setState(setValue);
-				if (url) navigate(url, { state });
-			}}
-		>
-			{text}
-		</StyledButton>
+		<StyledButtonContainer align={align}>
+			<StyledButton
+				color={color}
+				onClick={() => {
+					if (setState) setState(setValue);
+					if (url) navigate(url, { state });
+				}}
+			>
+				{text}
+			</StyledButton>
+		</StyledButtonContainer>
 	);
 };
 

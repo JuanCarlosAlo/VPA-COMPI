@@ -4,15 +4,15 @@ const TasksScheme = mongoose.Schema(
   {
     _id: String,
     userId: String,
-    taks: [
+    tasks: [
       {
-        task_id: String,
+        _id: String,
         taskCreation: Number,
-        taskTarget: Number,
+        taskDate: String,
         taskText: String,
         taskType: String,
         taskPriority: Number,
-        TaskCompletion: Boolean,
+        taskCompletion: Boolean,
       },
     ],
   },
