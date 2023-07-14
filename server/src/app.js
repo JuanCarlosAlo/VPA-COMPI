@@ -19,6 +19,8 @@ const io = new Server(httpServer, {
 const usersRoutes = require("./routes/users.routes");
 const journalRoutes = require("./routes/journal.routes");
 const tasksRoutes = require("./routes/tasks.routes");
+const chatsRoutes = require("./routes/chats.routes");
+const notesRoutes = require("./routes/notes.routes");
 
 // Middlewares
 app.use(cors());
@@ -32,6 +34,14 @@ mongoose.set("strictQuery", false);
 // Maneja la conexión de Socket.io
 io.on("connection", (socket) => {
   console.log("Cliente conectado");
+
+  socket.on("message", (data) => {
+    io.emit("message", data);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Client disconnected");
+  });
 
   // Maneja la solicitud de cambio de colección
   socket.on("startCollectionListener", () => {
@@ -55,6 +65,8 @@ io.on("connection", (socket) => {
 app.use("/users", usersRoutes);
 app.use("/journal", journalRoutes);
 app.use("/tasks", tasksRoutes);
+app.use("/notes", notesRoutes);
+app.use("/chats", chatsRoutes);
 
 // Inicia el servidor
 const startServer = async () => {
@@ -69,6 +81,11 @@ const startServer = async () => {
     io.listen(process.env.SOCKET_IO_PORT, () => {
       console.log(
         `Servidor de Socket.io en ejecución en el puerto ${process.env.SOCKET_IO_PORT}`
+      );
+    });
+    io.listen(4001, () => {
+      console.log(
+        `Servidor de Socket.io en ejecución en el puerto 4001`
       );
     });
   } catch (err) {

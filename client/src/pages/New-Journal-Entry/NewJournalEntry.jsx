@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import PageComponent from '../../components/page-component/PageComponent';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import { AuthContext } from '../../context/Auth.context';
@@ -16,6 +16,8 @@ import { StyledTexboxInput } from './styles';
 import SecondaryButton from '../../components/secondary-button/SecondaryButton';
 import { COLORS } from '../../constants/colors';
 
+import AddImageContainer from '../../components/add-image-container/AddImageContainer';
+
 const NewJournalEntry = () => {
 	const { currentUser } = useContext(AuthContext);
 	const currentDate = Date.now();
@@ -26,14 +28,14 @@ const NewJournalEntry = () => {
 	} = useForm({ mode: 'onBlur' });
 
 	const { setFetchInfo } = useFetch();
-
+	const [imgs, setImgs] = useState([]);
 	return (
 		<PageComponent>
 			<Secondaryheader url={'/journal'} />
 			<PageContainer>
 				<form
 					onSubmit={handleSubmit((formData, e) =>
-						onSubmit(formData, e, setFetchInfo, currentUser, currentDate)
+						onSubmit(formData, e, setFetchInfo, currentUser, currentDate, imgs)
 					)}
 				>
 					<Text
@@ -62,6 +64,11 @@ const NewJournalEntry = () => {
 						text={'Accept'}
 					/>
 				</form>
+				<AddImageContainer
+					currentUser={currentUser}
+					imgs={imgs}
+					setImgs={setImgs}
+				/>
 			</PageContainer>
 		</PageComponent>
 	);
@@ -72,7 +79,8 @@ const onSubmit = async (
 	e,
 	setFetchInfo,
 	currentUser,
-	currentDate
+	currentDate,
+	imgs
 ) => {
 	e.preventDefault();
 	const { journalEntryTitle, journalEntryText } = formData;
@@ -90,7 +98,7 @@ const onSubmit = async (
 					journalEntryCreation: currentDate,
 					journalEntryText,
 					journalEntryEdited: currentDate,
-					journalEntryImgs: []
+					journalEntryImgs: imgs
 				}),
 				headers: HEADERS
 			},

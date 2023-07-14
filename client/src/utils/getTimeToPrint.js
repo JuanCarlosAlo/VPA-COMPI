@@ -11,7 +11,8 @@ export const getDateToPrint = (dateString) => {
 
 export const getTimeToPrint = (dateString) => {
     const dateObject = new Date(dateString);
-    const hours = dateObject.getHours();
-    const minutes = dateObject.getMinutes();
-    return `${hours}:${minutes}`
-}
+    const hours = dateObject.getHours().toString().padStart(2, '0');
+    const minutes = dateObject.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+};
+

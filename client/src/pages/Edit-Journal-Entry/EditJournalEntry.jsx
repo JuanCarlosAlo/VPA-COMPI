@@ -7,14 +7,16 @@ import InputContainer from '../../components/InputContainer/InputContainer';
 import { JOURNAL_URLS } from '../../constants/urls';
 import { METHODS } from '../../constants/methods';
 import { HEADERS } from '../../constants/headers';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/Auth.context';
 import { useForm } from 'react-hook-form';
 import { useFetch } from '../../hooks/useFetch';
 import { MEASUREMENTS } from '../../constants/measurements';
 import { FORM_VALIDATIONS } from '../../constants/formValidations';
 import { COLORS } from '../../constants/colors';
-import { StyledTexboxInput } from './styles';
+import { StyledForm, StyledTexboxInput } from './styles';
+
+import AddImageContainer from '../../components/add-image-container/AddImageContainer';
 import SecondaryButton from '../../components/secondary-button/SecondaryButton';
 
 const EditJournalEntry = () => {
@@ -26,29 +28,28 @@ const EditJournalEntry = () => {
 		register,
 		formState: { errors }
 	} = useForm({ mode: 'onBlur' });
-
+	const [imgs, setImgs] = useState(state.journalEntryImgs);
 	const { setFetchInfo } = useFetch();
 	if (!state) return <Navigate to={'/journal'} />;
 	return (
 		<PageComponent>
 			<Secondaryheader url={'/journal'} />
 			<PageContainer>
-				<form
+				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>
-						onSubmit(formData, e, setFetchInfo, currentUser, state)
+						onSubmit(formData, e, setFetchInfo, currentUser, state, imgs)
 					)}
 				>
-					<Text
+					{/* <Text
 						text={`Date: ${new Date(
 							state.journalEntryCreation
 						).toLocaleDateString()}`}
-						align={MEASUREMENTS.ALIGN.LEFT}
+						align={MEASUREMENTS.ALIGN.CENTER}
 						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-					/>
+					/> */}
 					<InputContainer
 						errors={errors}
 						keyForm={'journalEntryTitle'}
-						label={'Title'}
 						register={register}
 						type={'text'}
 						defaultValue={state.journalEntryTitle}
@@ -61,19 +62,31 @@ const EditJournalEntry = () => {
 						defaultValue={state.journalEntryText}
 					/>
 					<p>{errors?.text?.message}</p>
-					<button>Accept</button>
-					{/* <SecondaryButton
+
+					<SecondaryButton
 						align={MEASUREMENTS.ALIGN.CENTER}
 						color={COLORS.MAIN}
 						text={'Accept'}
-					/> */}
-				</form>
+					/>
+				</StyledForm>
+				<AddImageContainer
+					currentUser={currentUser}
+					imgs={imgs}
+					setImgs={setImgs}
+				/>
 			</PageContainer>
 		</PageComponent>
 	);
 };
 
-const onSubmit = async (formData, e, setFetchInfo, currentUser, state) => {
+const onSubmit = async (
+	formData,
+	e,
+	setFetchInfo,
+	currentUser,
+	state,
+	imgs
+) => {
 	e.preventDefault();
 	const { journalEntryTitle, journalEntryText } = formData;
 	const currentDate = Date.now();
@@ -88,7 +101,7 @@ const onSubmit = async (formData, e, setFetchInfo, currentUser, state) => {
 					journalEntryTitle,
 					journalEntryText,
 					journalEntryEdited: currentDate,
-					journalEntryImgs: []
+					journalEntryImgs: imgs
 				}),
 				headers: HEADERS
 			},

@@ -9,7 +9,8 @@ export const USERS_URLS = {
 export const JOURNAL_URLS = {
 	ALL_ENTRIES: BASE + 'journal/all-entries/',
 	CREATE_ENTRY: BASE + 'journal/new-entry/',
-	EDIT_ENTRY: BASE + 'journal/edit-entry/'
+	EDIT_ENTRY: BASE + 'journal/edit-entry/',
+	DELETE_ENTRY: BASE + 'journal/delete-entry/'
 };
 
 export const TASKS_URLS = {
@@ -17,3 +18,16 @@ export const TASKS_URLS = {
 	CREATE_TASK: BASE + 'tasks/new-task/',
 	COMPLETE_TASK: BASE + 'tasks/complete-task/'
 };
+
+export const NOTES_URLS = {
+	ALL_NOTES: BASE + 'notes/all-notes/',
+	CREATE_NOTE: BASE + 'notes/new-note/',
+	EDIT_NOTE: BASE + 'notes/edit-note/',
+	DELETE_NOTE: BASE + 'notes/delete-note/'
+};
+
+export const CHAT_URLS = {
+	ALL_CHATS: BASE + 'chats/all-chats/',
+	CREATE_CHAT: BASE + 'chats/new-chat/',
+	ADD_MESSAGE: BASE + 'chats/add-message/'
+}

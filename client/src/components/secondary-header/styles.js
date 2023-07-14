@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
 import { MEASUREMENTS } from '../../constants/measurements';
 
-const SecondaryHeader = styled.div`
+const StyledSecondaryHeader = styled.div`
 	position: absolute;
 	top: ${MEASUREMENTS.HEADER.HEIGHT};
 	height: calc(${MEASUREMENTS.HEADER.HEIGHT} - 1rem);
@@ -14,4 +14,4 @@ const SecondaryHeader = styled.div`
 	background-color: ${COLORS.WHITE};
 	width: 100%;
 `;
-export { SecondaryHeader };
+export { StyledSecondaryHeader };

@@ -61,8 +61,13 @@ controller.createTask = async (req, res) => {
 
     tasksCollection.tasks.unshift(newTask);
     await tasksCollection.save();
-    await currentUser.tasks.unshift(tasksCollection._id);
-    await currentUser.save();
+    const existingTaskRef = currentUser.tasks.find(
+      (noteRef) => noteRef.toString() === tasksCollection._id.toString()
+    );
+    if (!existingTaskRef) {
+      currentUser.tasks.unshift(tasksCollection._id);
+      await currentUser.save();
+    }
     return res.status(200).send({ message: "Entry created successfully" });
   } catch (error) {
     console.log(error);

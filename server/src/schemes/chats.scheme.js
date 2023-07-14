@@ -6,15 +6,15 @@ const ChatsScheme = mongoose.Schema(
     userId: String,
     chatRooms: [
       {
-        chatRoom_id: String,
+        _id: String,
         chatRoomCreation: Number,
         chatRoomTitle: String,
-        ChatRoomLastRegistration: Number,
+        chatRoomLastRegistration: Number,
         messages: [
           {
-            message_id: String,
+            _id: String,
             messageCreator: String,
-            MessageText: String,
+            messageText: String,
             messageCreation: Number,
           },
         ],

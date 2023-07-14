@@ -55,11 +55,17 @@ controller.createEntry = async (req, res) => {
       journalEntryText,
       journalEntryImgs,
     };
-
-    await journalCollection.journalsEntries.unshift(newEntry);
+    journalCollection.journalsEntries.unshift(newEntry);
     await journalCollection.save();
-    await currentUser.journalEntries.unshift(journalCollection._id);
-    await currentUser.save();
+
+    const existingJournaleRef = currentUser.journalEntries.find(
+      (noteRef) => noteRef.toString() === journalCollection._id.toString()
+    );
+    if (!existingJournaleRef) {
+      currentUser.journalEntries.unshift(journalCollection._id);
+      await currentUser.save();
+    }
+
     return res.status(200).send({ message: "Entry created successfully" });
   } catch (error) {
     console.log(error);
@@ -107,6 +113,35 @@ controller.editEntry = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).send({ error: "Error editing entry" });
+  }
+};
+
+controller.deleteEntry = async (req, res) => {
+  try {
+    const { id } = req.body;
+
+    const result = await JournalsModel.findOneAndUpdate(
+      {
+        userId: req.params.id,
+      },
+      {
+        $pull: {
+          journalsEntries: { _id: id },
+        },
+      },
+      {
+        new: true, // Devuelve el documento actualizado
+      }
+    );
+
+    if (!result) {
+      return res.status(404).send({ error: "Entry not found" });
+    }
+
+    return res.status(200).send({ message: "Entry deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({ error: "Error deleting entry" });
   }
 };
 

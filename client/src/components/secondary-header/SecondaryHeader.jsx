@@ -1,7 +1,7 @@
 import { COLORS } from '../../constants/colors';
 import { MEASUREMENTS } from '../../constants/measurements';
 import SecondaryButton from '../secondary-button/SecondaryButton';
-import { SecondaryHeader } from './styles';
+import { StyledSecondaryHeader } from './styles';
 
 const Secondaryheader = ({
 	url,
@@ -11,7 +11,7 @@ const Secondaryheader = ({
 	state
 }) => {
 	return (
-		<SecondaryHeader>
+		<StyledSecondaryHeader>
 			<SecondaryButton
 				align={MEASUREMENTS.ALIGN.LEFT}
 				color={COLORS.MAIN}
@@ -28,7 +28,7 @@ const Secondaryheader = ({
 					state={state}
 				/>
 			)}
-		</SecondaryHeader>
+		</StyledSecondaryHeader>
 	);
 };
 

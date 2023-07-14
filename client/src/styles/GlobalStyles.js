@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     margin-bottom: 0;
     padding-left: 0;
   }
+
   
 /* Firefox */
 * {
@@ -42,20 +43,21 @@ const GlobalStyles = createGlobalStyle`
 
 /* Chrome, Edge and Safari */
 *::-webkit-scrollbar {
+  height: 10px;
   width: 10px;
 }
 *::-webkit-scrollbar-track {
   border-radius: 5px;
-  background-color: #FFFFFF;
-  border: 1px solid #000000;
+  background-color: transparent;
+
 }
 
 *::-webkit-scrollbar-track:hover {
-  background-color: #FFFFFF;
+  background-color:transparent;
 }
 
 *::-webkit-scrollbar-track:active {
-  background-color: #FFFFFF;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -65,11 +67,11 @@ const GlobalStyles = createGlobalStyle`
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #01D3E2;
+  background-color: #E6122B;
 }
 
 *::-webkit-scrollbar-thumb:active {
-  background-color: #01D3E2;
+  background-color: #E6122B;
 }
 input[type="checkbox"] {
   /* Add if not using autoprefixer */

@@ -25,6 +25,12 @@ const UsersScheme = mongoose.Schema(
         ref: "ChatsModel",
       },
     ],
+    notes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "NotesModel",
+      },
+    ],
   },
   {
     collection: "users",

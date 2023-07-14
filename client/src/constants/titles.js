@@ -10,8 +10,12 @@ export const TITLES = {
 			URL: '/tasks'
 		},
 		{
-			TEXT: 'CHAT',
-			URL: '/chat'
+			TEXT: 'NOTES',
+			URL: '/notes'
 		}
+		// {
+		// 	TEXT: 'CHAT',
+		// 	URL: '/chat'
+		// }
 	]
 };

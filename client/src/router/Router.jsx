@@ -13,6 +13,12 @@ import NewJournalEntry from '../pages/New-Journal-Entry/NewJournalEntry';
 import JournalEntry from '../pages/Journal-Entry/JournalEntry';
 import EditJournalEntry from '../pages/Edit-Journal-Entry/EditJournalEntry';
 import NewTask from '../pages/New-Task/NewTask';
+import NewChat from '../pages/New-Chat/NewChat';
+import Chatroom from '../pages/Chatroom/Chatroom';
+import Notes from '../pages/Notes/Notes';
+import NewNote from '../pages/New-Note/NewNote';
+import Note from '../pages/Note/Note';
+import EditNote from '../pages/Edit-Note/EditNote';
 
 const Router = () => {
 	return (
@@ -87,6 +93,38 @@ const Router = () => {
 						}
 					/>
 					<Route
+						path='/notes'
+						element={
+							<ProtectedRoute>
+								<Notes />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/new-note'
+						element={
+							<ProtectedRoute>
+								<NewNote />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/note'
+						element={
+							<ProtectedRoute>
+								<Note />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/edit-note'
+						element={
+							<ProtectedRoute>
+								<EditNote />
+							</ProtectedRoute>
+						}
+					/>
+					{/* <Route
 						path='/chat'
 						element={
 							<ProtectedRoute>
@@ -94,6 +132,22 @@ const Router = () => {
 							</ProtectedRoute>
 						}
 					/>
+					<Route
+						path='/new-chat'
+						element={
+							<ProtectedRoute>
+								<NewChat />
+							</ProtectedRoute>
+						}
+					/>
+					<Route
+						path='/chatroom/:id'
+						element={
+							<ProtectedRoute>
+								<Chatroom />
+							</ProtectedRoute>
+						}
+					/> */}
 				</Route>
 			</Route>
 		</Routes>
