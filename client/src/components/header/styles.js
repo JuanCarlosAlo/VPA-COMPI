@@ -9,11 +9,23 @@ const StyledHeader = styled.header`
 	height: ${MEASUREMENTS.HEADER.HEIGHT};
 	background-color: ${COLORS.WHITE};
 	color: ${COLORS.MAIN};
-	padding-left: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
-	padding-right: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
+
 	-webkit-box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
 	-moz-box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
 	box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
 `;
 
-export { StyledHeader };
+
+const StyledHeaderContainer = styled.div`
+display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
+	padding-right: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
+	width: 100%;
+ 	max-width: 1080px;
+    margin-left: auto;
+	margin-right: auto;
+   `
+
+export { StyledHeader, StyledHeaderContainer };

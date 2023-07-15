@@ -1,3 +1,3 @@
 export const TEXTS = {
-	WELCOME: 'Welcome to the virtual personal assistant!'
+	WELCOME: 'Welcome to the virtual personal manager!'
 };

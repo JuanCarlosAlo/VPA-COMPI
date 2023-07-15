@@ -10,7 +10,7 @@ const Footer = () => {
 		<StyledFooter>
 			<Text
 				text={'Developed by J.C.A.M'}
-				color={`${COLORS.MAIN}`}
+				color={COLORS.MAIN}
 				fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 			/>
 			<Link target='_blank' to='https://github.com/JuanCarlosAlo/VPA-COMPI'>

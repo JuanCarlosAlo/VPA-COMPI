@@ -30,7 +30,7 @@ const NewTask = () => {
 
 	return (
 		<PageComponent>
-			<Secondaryheader />
+			<Secondaryheader url={'/tasks'} />
 			<PageContainer>
 				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>

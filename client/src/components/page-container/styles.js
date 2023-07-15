@@ -16,7 +16,7 @@ const StyledPageContainer = styled.div`
 	background-color: ${COLORS.WHITE};
 	border: 4px solid ${COLORS.MAIN};
 	border-radius: 1rem;
-	
+	padding: 1rem;
 	padding-right: ${({ scroll }) => {
 		if (scroll) { return '0.5rem' } else { return 'none' }
 	}};

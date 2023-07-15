@@ -1,6 +1,4 @@
 import styled from "styled-components"
-import { COLORS } from "../../constants/colors"
-
 
 const StyledNotesColumsContainer = styled.div`
 display: grid;
@@ -9,9 +7,8 @@ align-content: flex-start;
 gap: 1rem;
 width: 100%;
 height: 100%;
-padding: 1rem;
 overflow-y: scroll;
-background-color: ${COLORS.MAIN};
+
 `
 
 

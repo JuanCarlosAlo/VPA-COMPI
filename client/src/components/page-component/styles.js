@@ -12,6 +12,10 @@ const StyledPage = styled.div`
 	padding-top: ${MEASUREMENTS.PADDING.SECONDARY_HEADER};
 	padding-left: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
 	padding-right: ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE};
+	max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
 `;
+
 
 export { StyledPage };

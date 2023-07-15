@@ -46,7 +46,7 @@ const Note = () => {
 									navigateTo={'/notes'}
 								/>
 							}
-							text={'Delete Entry'}
+							text={'Delete Note'}
 							color={COLORS.MAIN}
 						/>
 					</StyledTitleContainer>
