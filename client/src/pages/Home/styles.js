@@ -9,6 +9,9 @@ const StyledButtonsContainer = styled.div`
 	justify-content: flex-start;
 	gap: 2rem;
 	width: 90%;
+	@media screen and (min-width: 468px){
+		flex-direction: row;
+	}
 `;
 
 const StyledMainButton = styled.div`
@@ -25,6 +28,7 @@ const StyledMainButton = styled.div`
 		background-color: ${COLORS.MAIN};
 		color: ${COLORS.WHITE};
 	}
+	
 `;
 
 export { StyledMainButton, StyledButtonsContainer };
