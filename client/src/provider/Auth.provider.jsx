@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 	}, []);
 
 	useEffect(() => {
-		const socket = io('http://localhost:4000');
+		const socket = io('https://vpa-compi-server.onrender.com/');
 
 		socket.on('collectionChange', async change => {
 			switch (change.operationType) {
@@ -63,7 +63,7 @@ const getUserInfoFromMongo = async (
 ) => {
 	try {
 		const response = await fetch(
-			`http://localhost:3000/users/userById/${user.uid}`
+			`https://vpa-compi-server.onrender.com/users/userById/${user.uid}`
 		);
 		if (response.ok) {
 			const userInfo = await response.json();
