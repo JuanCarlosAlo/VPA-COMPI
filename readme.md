@@ -1,6 +1,6 @@
-# VPA COMPI
+# VPM COMPI
 
-![Project image](https://raw.githubusercontent.com/JuanCarlosAlo/Portable-Stereo-app/main/client/public/images/readme-0.jpg)
+![Project image](https://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme1.png)
 
 ## Live Demo
 
@@ -8,7 +8,7 @@
 
 ## Description
 
-VPA COMPI is a virtual personal asistant for journal entries, tasks and notes, it will save your personal information.
+VPM COMPI is a virtual personal manager for journal entries, tasks and notes, it will save your personal information.
 
 ## What have I learned in this project?
 
@@ -38,21 +38,15 @@ If you want to take a look at the project, I recommend:
 
 ## Desktop
 
-![Project screenshot](https://raw.githubusercontent.com/JuanCarlosAlo/Portable-Stereo-app/main/client/public/images/readme-1.jpg)
+![Project screenshot](https://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme1.png)
 
 ## Mobile
 
-![Project screenshot](https://raw.githubusercontent.com/JuanCarlosAlo/Portable-Stereo-app/main/client/public/images/readme-2.jpg)
-
-## Functionalities
-
-Some of the functionalities of the app
-
-![Screenshot of the project](https://raw.githubusercontent.com/JuanCarlosAlo/Portable-Stereo-app/main/client/public/images/readme-2.jpg)
+![Project screenshot](hhttps://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme2.png)
 
 ## Part of the code
 
-![Screenshot of the project](https://raw.githubusercontent.com/JuanCarlosAlo/Portable-Stereo-app/main/client/public/images/1080-3.jpg)
+![Screenshot of the project](https://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme3.png)
 
 ## Author
 
