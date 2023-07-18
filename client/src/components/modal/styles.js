@@ -10,14 +10,13 @@ const StyledModal = styled.div`
 	left: 0;
 	height: 100vh;
 	width: 100vw;
-	background-color: rgb(20,20,20,0.4);
+	background-color: rgb(0,0,0,0.8);
 	z-index: 100;
 `;
 
 const StyledModalContainer = styled.div`
-background-color: ${COLORS.WHITE};
-border: 4px solid ${COLORS.MAIN};
-border-radius: 1rem;
+background-color: ${COLORS.BLACK_TRANSPARENT};
+border: 2px solid ${COLORS.MAIN};
 padding: 1rem;
 `
 export { StyledModal, StyledModalContainer };

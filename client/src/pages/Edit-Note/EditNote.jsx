@@ -14,7 +14,8 @@ import { NOTES_URLS } from '../../constants/urls';
 import { METHODS } from '../../constants/methods';
 import { HEADERS } from '../../constants/headers';
 import InputContainer from '../../components/InputContainer/InputContainer';
-import { StyledTexboxInput } from './styles';
+import { StyledForm } from './styles';
+import TextareaComponent from '../../components/textarea-component/TextareaComponent';
 
 const EditNote = () => {
 	const { state } = useLocation();
@@ -32,7 +33,7 @@ const EditNote = () => {
 		<PageComponent>
 			<Secondaryheader url={'/note'} />
 			<PageContainer>
-				<form
+				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>
 						onSubmit(formData, e, setFetchInfo, currentUser, state)
 					)}
@@ -52,10 +53,11 @@ const EditNote = () => {
 						defaultValue={state.noteTitle}
 					/>
 
-					<StyledTexboxInput
-						name='journalEntryText'
-						{...register('noteText', FORM_VALIDATIONS.journalEntry)}
-						placeholder='Write your entry here'
+					<TextareaComponent
+						formValidation={FORM_VALIDATIONS.note}
+						name={'noteText'}
+						placeHolder={'Write your note here'}
+						register={register}
 						defaultValue={state.noteText}
 					/>
 					<p>{errors?.text?.message}</p>
@@ -65,7 +67,7 @@ const EditNote = () => {
 						color={COLORS.MAIN}
 						text={'Accept'}
 					/>
-				</form>
+				</StyledForm>
 			</PageContainer>
 		</PageComponent>
 	);

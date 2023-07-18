@@ -2,7 +2,6 @@ import { Navigate, useLocation } from 'react-router-dom';
 import PageComponent from '../../components/page-component/PageComponent';
 import Secondaryheader from '../../components/secondary-header/SecondaryHeader';
 import PageContainer from '../../components/page-container/PageContainer';
-import Text from '../../components/text/Text';
 import InputContainer from '../../components/InputContainer/InputContainer';
 import { JOURNAL_URLS } from '../../constants/urls';
 import { METHODS } from '../../constants/methods';
@@ -14,10 +13,11 @@ import { useFetch } from '../../hooks/useFetch';
 import { MEASUREMENTS } from '../../constants/measurements';
 import { FORM_VALIDATIONS } from '../../constants/formValidations';
 import { COLORS } from '../../constants/colors';
-import { StyledForm, StyledTexboxInput } from './styles';
+import { StyledForm } from './styles';
 
 import AddImageContainer from '../../components/add-image-container/AddImageContainer';
 import SecondaryButton from '../../components/secondary-button/SecondaryButton';
+import TextareaComponent from '../../components/textarea-component/TextareaComponent';
 
 const EditJournalEntry = () => {
 	const { state } = useLocation();
@@ -35,6 +35,11 @@ const EditJournalEntry = () => {
 		<PageComponent>
 			<Secondaryheader url={'/journal'} />
 			<PageContainer>
+				<AddImageContainer
+					currentUser={currentUser}
+					imgs={imgs}
+					setImgs={setImgs}
+				/>
 				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>
 						onSubmit(formData, e, setFetchInfo, currentUser, state, imgs)
@@ -55,11 +60,12 @@ const EditJournalEntry = () => {
 						defaultValue={state.journalEntryTitle}
 					/>
 
-					<StyledTexboxInput
-						name='journalEntryText'
-						{...register('journalEntryText', FORM_VALIDATIONS.journalEntry)}
-						placeholder='Write your entry here'
+					<TextareaComponent
+						name={'journalEntryText'}
 						defaultValue={state.journalEntryText}
+						formValidation={FORM_VALIDATIONS.journalEntry}
+						placeHolder={'Write your entry here'}
+						register={register}
 					/>
 					<p>{errors?.text?.message}</p>
 
@@ -69,11 +75,6 @@ const EditJournalEntry = () => {
 						text={'Accept'}
 					/>
 				</StyledForm>
-				<AddImageContainer
-					currentUser={currentUser}
-					imgs={imgs}
-					setImgs={setImgs}
-				/>
 			</PageContainer>
 		</PageComponent>
 	);

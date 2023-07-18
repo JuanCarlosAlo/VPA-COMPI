@@ -9,11 +9,14 @@ white-space:wrap;
 overflow: hidden;
 text-overflow: ellipsis;
 width:100%;
-background-color: ${COLORS.MAIN};
+background-color: ${COLORS.UNACTIVE};
 color: ${COLORS.WHITE};
 height:  150px;
-border-radius: 0.5rem;
 padding: 1rem;
 cursor: pointer;
+&:hover{
+    background-color: ${COLORS.WHITE};
+    color: ${COLORS.MAIN};
+}
 `
 export { StyledNoteElement }

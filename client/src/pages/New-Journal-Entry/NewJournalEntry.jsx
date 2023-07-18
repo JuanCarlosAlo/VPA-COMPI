@@ -12,7 +12,7 @@ import { JOURNAL_URLS } from '../../constants/urls';
 import Text from '../../components/text/Text';
 import { MEASUREMENTS } from '../../constants/measurements';
 import InputContainer from '../../components/InputContainer/InputContainer';
-import { StyledTexboxInput } from './styles';
+import { StyledForm, StyledTexboxInput } from './styles';
 import SecondaryButton from '../../components/secondary-button/SecondaryButton';
 import { COLORS } from '../../constants/colors';
 
@@ -33,22 +33,27 @@ const NewJournalEntry = () => {
 		<PageComponent>
 			<Secondaryheader url={'/journal'} />
 			<PageContainer>
-				<form
+				<AddImageContainer
+					currentUser={currentUser}
+					imgs={imgs}
+					setImgs={setImgs}
+				/>
+				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>
 						onSubmit(formData, e, setFetchInfo, currentUser, currentDate, imgs)
 					)}
 				>
-					<Text
-						text={`Date: ${new Date(currentDate).toLocaleDateString()}`}
-						align={MEASUREMENTS.ALIGN.LEFT}
-						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-					/>
 					<InputContainer
 						errors={errors}
 						keyForm={'journalEntryTitle'}
 						label={'Title'}
 						register={register}
 						type={'text'}
+					/>
+					<Text
+						text={`Date: ${new Date(currentDate).toLocaleDateString()}`}
+						align={MEASUREMENTS.ALIGN.CENTER}
+						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 					/>
 
 					<StyledTexboxInput
@@ -63,12 +68,7 @@ const NewJournalEntry = () => {
 						color={COLORS.MAIN}
 						text={'Accept'}
 					/>
-				</form>
-				<AddImageContainer
-					currentUser={currentUser}
-					imgs={imgs}
-					setImgs={setImgs}
-				/>
+				</StyledForm>
 			</PageContainer>
 		</PageComponent>
 	);

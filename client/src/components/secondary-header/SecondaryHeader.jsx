@@ -18,18 +18,20 @@ const Secondaryheader = ({
 			<StyledSecondaryHeaderContainer>
 				<SecondaryButton
 					align={MEASUREMENTS.ALIGN.LEFT}
-					color={COLORS.MAIN}
+					color={COLORS.WHITE}
 					url={url}
 					text={'Back'}
 					state={state}
+					border={true}
 				/>
 				{secondButton && (
 					<SecondaryButton
 						align={MEASUREMENTS.ALIGN.RIGHT}
-						color={COLORS.MAIN}
+						color={COLORS.WHITE}
 						url={secondUrl}
 						text={secondText}
 						state={state}
+						border={true}
 					/>
 				)}
 			</StyledSecondaryHeaderContainer>

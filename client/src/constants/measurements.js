@@ -17,21 +17,25 @@ export const MEASUREMENTS = {
 	},
 	FONTS_SIZE: {
 		TITLE: {
-			MOBILE: '1.25rem',
-			TABLET: '1.4rem'
+			MOBILE: '1.4rem',
+			TABLET: '1.5rem',
+			DESKTOP: '1.7rem'
 		},
 		SUBTITLES: {
-			MOBILE: '0.875rem',
-			TABLET: '1rem'
+			MOBILE: '1rem',
+			TABLET: '1.2rem',
+			DESKTOP: '1.4rem'
 		},
 		TEXT: {
-			MOBILE: '0.625rem',
-			TABLET: '0.8rem'
+			MOBILE: '0.8rem',
+			TABLET: '1rem',
+			DESKTOP: '1.2rem'
 		},
 		KEY: {
 			TITLE: 'TITLE',
 			SUBTITLE: 'SUBTITLES',
-			TEXT: 'TEXT'
+			TEXT: 'TEXT',
+			DESKTOP: 'DESKTOP'
 		}
 	},
 	FONTS_WEIGHT: {

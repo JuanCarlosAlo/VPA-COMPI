@@ -19,9 +19,9 @@ const StyledMainButton = styled.div`
 	align-items: center;
 	justify-content: center;
 	height: ${MEASUREMENTS.BUTTONS.HEIGHT};
-	background-color: ${COLORS.WHITE};
-	border: 2px solid ${COLORS.SECONDARY};
-	border-radius: ${MEASUREMENTS.BUTTONS.BORDER_RADIUS};
+	background-color: ${COLORS.UNACTIVE};
+	border: 2px solid ${COLORS.MAIN};
+	color: ${COLORS.WHITE};
 	width: 100%;
 	cursor: pointer;
 	&:hover {

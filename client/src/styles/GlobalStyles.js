@@ -7,17 +7,30 @@ const GlobalStyles = createGlobalStyle`
   *::before{
     box-sizing: border-box;
   }
+  @font-face {
+    font-family: NumberNextBold;
+    src: url('/fonts/nuber-next-font-family/NuberNextCondensed-DemiBold.otf');
+}
+@font-face {
+    font-family: NumberNextRegular;
+    src: url('/fonts/nuber-next-font-family/NuberNextCondensed-Regular.otf');
+}
+@font-face {
+    font-family: Abnes;
+    src: url('/fonts/nuber-next-font-family/Abnes.otf');
+}
   img{
     display: block;
     max-width: 100%;
   }
+  
   body{
     margin: 0;
-    font-family: sans-serif;
+    font-family: NumberNextRegular;
     height: 100vh;
     width: 100vw;
-    background: url('/images/bg_squares.svg'), ${SECONDARY_COLORS.BACKGROUND_GRADIANT};
-    background-size: contain;
+    background: url('/images/bg_cross.svg'), ${SECONDARY_COLORS.BACKGROUND_GRADIANT};
+    background-size: cover;
     background-position: center;
     background-repeat: repeat;
   
@@ -79,7 +92,7 @@ input[type="checkbox"] {
   /* Remove most all native input styles */
   appearance: none;
   /* For iOS < 15 */
-  background-color: ${COLORS.WHITE};
+  background-color: transparent;
   /* Not removed via appearance */
   margin: 0;
 

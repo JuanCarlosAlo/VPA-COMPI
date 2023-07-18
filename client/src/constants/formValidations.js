@@ -1,7 +1,8 @@
 const messages = {
-	name: 'El formato introducido no es correcto',
-	journalEntry: 'The entry is obligatory',
-	taskText: 'The task is obligatory',
+	name: 'The name format is incorrect',
+	journalEntry: 'Please write a entry',
+	taskText: 'Please write a task',
+	noteText: 'Please write a note',
 	email: 'Use a valid email',
 	requireEmail: 'The email is obligatory',
 	password:
@@ -44,5 +45,8 @@ export const FORM_VALIDATIONS = {
 	},
 	task: {
 		required: messages.taskText
+	},
+	note: {
+		required: messages.noteText
 	}
 };

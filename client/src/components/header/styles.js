@@ -7,12 +7,11 @@ const StyledHeader = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	height: ${MEASUREMENTS.HEADER.HEIGHT};
-	background-color: ${COLORS.WHITE};
+	background-color: ${COLORS.BLACK};
 	color: ${COLORS.MAIN};
-
-	-webkit-box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
-	-moz-box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
-	box-shadow: 0px 5px 30px 10px ${COLORS.SECONDARY};
+	-webkit-box-shadow: 0px 5px 30px 10px ${COLORS.MAIN};
+	-moz-box-shadow: 0px 5px 30px 10px ${COLORS.MAIN};
+	box-shadow: 0px 5px 30px 10px ${COLORS.MAIN};
 `;
 
 

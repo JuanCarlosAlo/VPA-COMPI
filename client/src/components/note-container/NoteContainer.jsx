@@ -5,7 +5,7 @@ import { StyledNoteElement } from './styles';
 
 const NoteContainer = ({ note }) => {
 	const navigate = useNavigate();
-	console.log(note);
+
 	return (
 		<StyledNoteElement onClick={() => navigate('/note', { state: note })}>
 			{note.noteTitle && (

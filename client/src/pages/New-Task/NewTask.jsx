@@ -7,15 +7,18 @@ import { AuthContext } from '../../context/Auth.context';
 import { useForm } from 'react-hook-form';
 import { useFetch } from '../../hooks/useFetch';
 import { FORM_VALIDATIONS } from '../../constants/formValidations';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import TimePicker from 'react-time-picker';
-import { StyledForm } from './styles';
+
 import { getDateTime } from '../../utils/getDateTime';
 import { getHoursAndMinutes } from '../../utils/getHoursAndMinutes';
 import { TASKS_URLS } from '../../constants/urls';
 import { METHODS } from '../../constants/methods';
 import { HEADERS } from '../../constants/headers';
+
+import { SELECT_OPTIONS } from '../../constants/selectOptions';
+import SecondaryButton from '../../components/secondary-button/SecondaryButton';
+import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
+import { StyledDatePicker, StyledForm, StyledTimePicker } from './styles';
 
 const NewTask = () => {
 	const { currentUser } = useContext(AuthContext);
@@ -53,7 +56,7 @@ const NewTask = () => {
 						type={'text'}
 					/>
 					<label htmlFor='date'>Choose a date</label>
-					<DatePicker
+					<StyledDatePicker
 						selected={selectedDate}
 						onChange={date => {
 							setSelectedDate(date);
@@ -61,28 +64,34 @@ const NewTask = () => {
 						dateFormat='dd/MM/yyyy'
 						placeholderText='Select a date'
 					/>
-					<label htmlFor='time'>Choose wich time</label>
-					<TimePicker
+					<label htmlFor='time'>Select time</label>
+					<StyledTimePicker
 						onChange={time => setSelectedTime(time)}
-						value={selectedTime}
+						showSecond={false}
+						hideDisabledOptions
+						minuteStep={5}
+						use12Hours
 					/>
-					<div>
-						<label htmlFor='taskType'>Type</label>
-						<select name='taskType' id='' {...register('taskType')}>
-							<option value='personal'>Personal</option>
-							<option value='work'>Work</option>
-						</select>
-					</div>
-					<div>
-						<label htmlFor='taskPriority'>Priority</label>
-						<select name='taskPriority' id='' {...register('taskPriority')}>
-							<option value='1'>Low</option>
-							<option value='2'>Medium</option>
-							<option value='3'>High</option>
-							<option value='4'>Very High</option>
-						</select>
-					</div>
-					<button>Accept</button>
+					<InputContainer
+						errors={errors}
+						label={'Type'}
+						register={register}
+						options={SELECT_OPTIONS.TYPE}
+						keyForm={'taskType'}
+					/>
+					<InputContainer
+						errors={errors}
+						label={'Priority'}
+						register={register}
+						options={SELECT_OPTIONS.PRIORITY}
+						keyForm={'taskPriority'}
+					/>
+
+					<SecondaryButton
+						align={MEASUREMENTS.ALIGN.CENTER}
+						color={COLORS.MAIN}
+						text={'Accept'}
+					/>
 				</StyledForm>
 			</PageContainer>
 		</PageComponent>
@@ -98,7 +107,7 @@ const onSubmit = async (
 	selectedTime
 ) => {
 	e.preventDefault();
-	console.log(formData, getDateTime(selectedDate, selectedTime));
+	console.log(formData, selectedDate, selectedTime);
 	const { taskPriority, taskText, taskType } = formData;
 	try {
 		await setFetchInfo({

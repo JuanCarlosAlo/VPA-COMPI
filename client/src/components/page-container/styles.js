@@ -8,14 +8,14 @@ const StyledPageContainer = styled.div`
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	height: 70%;
+	height: 80%;
 	width: calc(
 		100% - ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE} - ${MEASUREMENTS.PADDING.MOBILE_OUTSIDE}
 	);
 	
-	background-color: ${COLORS.WHITE};
-	border: 4px solid ${COLORS.MAIN};
-	border-radius: 1rem;
+	background-color: ${COLORS.BLACK_TRANSPARENT};
+	border: 2px solid ${COLORS.MAIN};
+
 	padding: 1rem;
 	padding-right: ${({ scroll }) => {
 		if (scroll) { return '0.5rem' } else { return 'none' }

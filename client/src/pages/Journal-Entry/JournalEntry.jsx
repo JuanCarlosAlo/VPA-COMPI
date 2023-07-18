@@ -37,11 +37,13 @@ const JournalEntry = () => {
 								align={MEASUREMENTS.ALIGN.LEFT}
 								fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TITLE}
 								margin={'0.5rem'}
+								color={COLORS.WHITE}
 							/>
 							<Text
 								text={new Date(state.journalEntryCreation).toLocaleDateString()}
 								align={MEASUREMENTS.ALIGN.LEFT}
 								fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
+								color={COLORS.WHITE}
 							/>
 						</div>
 						<SecondaryButton
@@ -57,7 +59,8 @@ const JournalEntry = () => {
 								/>
 							}
 							text={'Delete Entry'}
-							color={COLORS.MAIN}
+							color={COLORS.WHITE}
+							bgcolor={COLORS.MAIN}
 						/>
 					</StyledTitleContainer>
 					<StyledEntryContainer>
@@ -65,6 +68,7 @@ const JournalEntry = () => {
 							align={MEASUREMENTS.ALIGN.LEFT}
 							text={state.journalEntryText}
 							fontSize={MEASUREMENTS.FONTS_SIZE.KEY.TEXT}
+							color={COLORS.WHITE}
 						/>
 					</StyledEntryContainer>
 					{state.journalEntryImgs.length > 0 && (

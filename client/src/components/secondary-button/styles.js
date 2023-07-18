@@ -1,19 +1,35 @@
 import styled from 'styled-components';
 import { MEASUREMENTS } from '../../constants/measurements';
+import { COLORS } from '../../constants/colors';
 
 const StyledButton = styled.button`
 	background-color: transparent;
-	border: none;
 	color: ${({ color }) => color};
+	border: ${({ border }) => {
+		if (border) {
+			return `2px solid ${COLORS.MAIN}`
+		} else {
+			return 'none'
+		}
+	}};
+	background-color: ${({ bgcolor }) => bgcolor};
+	width: 150px;
+	padding-top : 0.5rem;
+	padding-bottom : 0.5rem;
 	font-weight: ${MEASUREMENTS.FONTS_WEIGHT.BOLD};
 	margin: 0;
 	cursor: pointer;
+	&:hover{
+		background-color: ${COLORS.WHITE};
+		color: ${COLORS.BLACK};
+		border: none
+	}
 `;
 
 const StyledButtonContainer = styled.div`
 display: flex;
 justify-content: ${({ align }) => {
-		console.log(align)
+
 		if (align === 'CENTER') {
 			return 'center'
 		}

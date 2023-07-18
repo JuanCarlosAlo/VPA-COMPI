@@ -8,7 +8,9 @@ const SecondaryButton = ({
 	url,
 	color,
 	align,
-	state
+	state,
+	border,
+	bgcolor
 }) => {
 	const navigate = useNavigate();
 
@@ -16,6 +18,8 @@ const SecondaryButton = ({
 		<StyledButtonContainer align={align}>
 			<StyledButton
 				color={color}
+				border={border}
+				bgcolor={bgcolor}
 				onClick={() => {
 					if (setState) setState(setValue);
 					if (url) navigate(url, { state });

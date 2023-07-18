@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-const StyledTexboxInput = styled.textarea`
-	height: 200px;
-	width: 100%;
-	resize: none;
-`;
 
-export { StyledTexboxInput }
+const StyledForm = styled.form`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+`
+export { StyledForm }

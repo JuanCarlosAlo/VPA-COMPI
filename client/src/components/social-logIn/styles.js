@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
-import { MEASUREMENTS } from '../../constants/measurements';
+
 
 const StyledButton = styled.button`
 	display: flex;
@@ -11,14 +11,13 @@ const StyledButton = styled.button`
 	width: 250px;
 	margin-bottom: 2rem;
 	border: 2px solid ${COLORS.SECONDARY};
-	border-radius: ${MEASUREMENTS.BUTTONS.BORDER_RADIUS};
 	color: ${COLORS.SECONDARY};
-	background-color: ${COLORS.WHITE};
+	background-color: ${COLORS.BLACK};
 	cursor: pointer;
 	&:hover {
 		background-color: ${COLORS.MAIN};
 		color: ${COLORS.WHITE};
-		border: 1px solid ${COLORS.TERCIARY};
+		border: 2px solid ${COLORS.MAIN};
 	}
 `;
 

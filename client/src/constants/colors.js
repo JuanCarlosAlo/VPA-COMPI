@@ -4,9 +4,10 @@ export const COLORS = {
 	TERCIARY: '#CFF10A',
 	BLACK: '#000000',
 	WHITE: '#FAFAFA',
-	UNACTIVE: '#004E5C'
+	UNACTIVE: '#3D3D3D',
+	BLACK_TRANSPARENT: 'rgb(0,0,0,0.6)'
 };
 export const SECONDARY_COLORS = {
-	BACKGROUND_GRADIANT: `linear-gradient(180deg, rgba(18, 192, 230, 0.70) 0%, #F0F0F0 35%);`,
-	SECONDARY_GRADIANT: `linear-gradient(180deg, rgba(18, 192, 230, 0.70) 0%, #F0F0F0 65%);`
+	BACKGROUND_GRADIANT: `linear-gradient(180deg, #1E1E1E 0%, #000 25%)`,
+	SECONDARY_GRADIANT: `linear-gradient(180deg, #1E1E1E 0%, #000 65%);`
 };

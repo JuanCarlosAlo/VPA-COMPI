@@ -18,8 +18,13 @@ const StyledText = styled.p`
 	margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE} - 0.5rem)` }};
 	@media screen and (min-width: 768px) {
 		font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].TABLET};
-		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE} - 0.5rem)` }};
-		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].MOBILE} - 0.5rem)` }};
+		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].TABLET} - 0.5rem)` }};
+		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].TABLET} - 0.5rem)` }};
+	}
+	@media screen and (min-width: 1024px) {
+		font-size: ${({ fontSize }) => MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP};
+		margin-top:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP} - 0.5rem)` }};
+		margin-bottom:  ${({ fontSize }) => { return `calc(${MEASUREMENTS.FONTS_SIZE[fontSize].DESKTOP} - 0.5rem)` }};
 	}
 `;
 

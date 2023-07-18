@@ -7,16 +7,17 @@ const StyledPrimaryButton = styled.button`
 	align-items: center;
 	justify-content: center;
 	height: ${MEASUREMENTS.BUTTONS.HEIGHT};
-	background-color: ${COLORS.WHITE};
-	border: 2px solid ${COLORS.SECONDARY};
-	border-radius: ${MEASUREMENTS.BUTTONS.BORDER_RADIUS};
-	color: ${COLORS.SECONDARY};
+	background-color: ${COLORS.MAIN};
+	border: 2px solid ${COLORS.WHITE};
+	color: ${COLORS.WHITE};
 	width: 100%;
+	max-width: 350px;
+	margin-bottom: 1rem;
 	cursor: pointer;
 	&:hover {
-		background-color: ${COLORS.MAIN};
-		color: ${COLORS.WHITE};
-		border: 2px solid ${COLORS.TERCIARY};
+		background-color: ${COLORS.WHITE};
+		color: ${COLORS.MAIN};
+		border: 2px solid ${COLORS.MAIN};
 	}
 `;
 

@@ -14,7 +14,7 @@ const Chat = () => {
 		url: CHAT_URLS.ALL_CHATS + currentUser._id
 	});
 	if (loading) return <p>...Loanding</p>;
-	console.log(data);
+
 	return (
 		<PageComponent>
 			<Secondaryheader

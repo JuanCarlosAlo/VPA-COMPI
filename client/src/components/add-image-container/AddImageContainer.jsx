@@ -1,5 +1,6 @@
 import { v4 } from 'uuid';
 import {
+	StyledAddImgContainer,
 	StyledCrossIcon,
 	StyledImg,
 	StyledImgsContainer,
@@ -10,9 +11,8 @@ import { deleteObject, ref } from 'firebase/storage';
 import { storage } from '../../config/firebase.config';
 
 const AddImageContainer = ({ imgs, setImgs, currentUser }) => {
-	console.log(imgs);
 	return (
-		<>
+		<StyledAddImgContainer>
 			<StyledImgsContainer>
 				{imgs.length > 0 &&
 					imgs.map(img => (
@@ -29,7 +29,7 @@ const AddImageContainer = ({ imgs, setImgs, currentUser }) => {
 				setValue={setImgs}
 				value={imgs}
 			/>
-		</>
+		</StyledAddImgContainer>
 	);
 };
 

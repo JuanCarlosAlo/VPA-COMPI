@@ -9,7 +9,7 @@ gap: 1rem;
 overflow-x: scroll;
 width: 100%;
 
-
+height: 100px;
 `
 
 const StyledCalendarNumber = styled.p`

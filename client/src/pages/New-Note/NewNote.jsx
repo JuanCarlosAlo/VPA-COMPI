@@ -14,7 +14,8 @@ import { COLORS } from '../../constants/colors';
 import { HEADERS } from '../../constants/headers';
 import { METHODS } from '../../constants/methods';
 import { NOTES_URLS } from '../../constants/urls';
-import { StyledTexboxInput } from './styles';
+import { StyledForm } from './styles';
+import TextareaComponent from '../../components/textarea-component/TextareaComponent';
 
 const NewNote = () => {
 	const { currentUser } = useContext(AuthContext);
@@ -31,16 +32,11 @@ const NewNote = () => {
 		<PageComponent>
 			<Secondaryheader url={'/notes'} />
 			<PageContainer>
-				<form
+				<StyledForm
 					onSubmit={handleSubmit((formData, e) =>
 						onSubmit(formData, e, setFetchInfo, currentUser, currentDate)
 					)}
 				>
-					<Text
-						text={`Date: ${new Date(currentDate).toLocaleDateString()}`}
-						align={MEASUREMENTS.ALIGN.LEFT}
-						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
-					/>
 					<InputContainer
 						errors={errors}
 						keyForm={'noteTitle'}
@@ -48,12 +44,18 @@ const NewNote = () => {
 						register={register}
 						type={'text'}
 					/>
-
-					<StyledTexboxInput
-						name='noteText'
-						{...register('noteText', FORM_VALIDATIONS.journalEntry)}
-						placeholder='Write your note here'
+					<Text
+						text={`Date: ${new Date(currentDate).toLocaleDateString()}`}
+						align={MEASUREMENTS.ALIGN.CENTER}
+						fontSize={MEASUREMENTS.FONTS_SIZE.KEY.SUBTITLE}
 					/>
+					<TextareaComponent
+						name={'noteText'}
+						register={register}
+						formValidation={FORM_VALIDATIONS.journalEntry}
+						placeHolder={'Write your note here'}
+					/>
+
 					<p>{errors?.text?.message}</p>
 
 					<SecondaryButton
@@ -61,7 +63,7 @@ const NewNote = () => {
 						color={COLORS.MAIN}
 						text={'Accept'}
 					/>
-				</form>
+				</StyledForm>
 			</PageContainer>
 		</PageComponent>
 	);
