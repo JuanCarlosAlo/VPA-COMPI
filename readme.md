@@ -42,7 +42,7 @@ If you want to take a look at the project, I recommend:
 
 ## Mobile
 
-![Project screenshot](hhttps://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme2.png)
+![Project screenshot](https://raw.githubusercontent.com/JuanCarlosAlo/VTM-COMPI/main/client/public/images/readme2.png)
 
 ## Part of the code
 
