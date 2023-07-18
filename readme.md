@@ -12,9 +12,9 @@ VPM COMPI is a virtual personal manager for journal entries, tasks and notes, it
 
 ## What have I learned in this project?
 
-In this proyect I learn how to componentize everything in for a better re-use and foward thinking so it can be extended in the future.
+In this proyect I learn how to componentize everything for a better re-use and foward thinking for the extension and growth of the app.
 
-I have learn how to properly manage the data storage in the back-side of the aplication utylizing collections for every type of data and saving the reference of the collection in the user collection.
+I have learn how to properly manage the data storage in the back-side of the aplication utylizing collections for every type of data and saving the reference of the collection, in the user collection.
 
 Initially this app would have been able to handle a conversation with an AI, integrating the API for it with diferent chatrooms, but due to time restrictions and the fact that to do so, the training of the bot to have a conversation with a human is necessary the idea was scrathed.
 
